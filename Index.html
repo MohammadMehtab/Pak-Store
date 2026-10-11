@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pak Store - Online Shopping</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: #f4f6f9;
+            color: #333;
+        }
+
+        /* Top Navbar */
+        nav {
+            background-color: #ffffff;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 20px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .logo {
+            font-size: 22px;
+            font-weight: 800;
+            color: #ff4757;
+        }
+
+        .search-bar {
+            flex: 1;
+            margin: 0 15px;
+            max-width: 300px;
+        }
+
+        .search-bar input {
+            width: 100%;
+            padding: 8px 15px;
+            border-radius: 20px;
+            border: 1px solid #ddd;
+            outline: none;
+            background: #f1f2f6;
+            font-size: 14px;
+        }
+
+        .cart-icon {
+            font-size: 20px;
+            cursor: pointer;
+            position: relative;
+        }
+
+        .cart-count {
+            position: absolute;
+            top: -8px;
+            right: -8px;
+            background: #ff4757;
+            color: white;
+            font-size: 10px;
+            padding: 2px 6px;
+            border-radius: 50%;
+            font-weight: bold;
+        }
+
+        /* Hero Banner */
+        .hero {
+            background: linear-gradient(135deg, #ff4757, #ff6b81);
+            color: white;
+            padding: 40px 20px;
+            text-align: center;
+            border-bottom-left-radius: 30px;
+            border-bottom-right-radius: 30px;
+            margin-bottom: 25px;
+        }
+
+        .hero h1 {
+            font-size: 26px;
+            margin-bottom: 8px;
+        }
+
+        .hero p {
+            font-size: 14px;
+            opacity: 0.9;
+        }
+
+        /* Section Heading */
+        .section-title {
+            padding: 0 20px;
+            font-size: 18px;
+            font-weight: 700;
+            margin-bottom: 15px;
+            color: #2f3542;
+        }
+
+        /* Product Grid */
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+            padding: 0 20px 40px 20px;
+        }
+
+        @media (min-width: 768px) {
+            .product-grid {
+                grid-template-columns: repeat(4, 1fr);
+            }
+        }
+
+        /* Product Card */
+        .product-card {
+            background: #ffffff;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+        }
+
+        .product-img {
+            width: 100%;
+            height: 140px;
+            object-fit: cover;
+            background: #eccc68;
+        }
+
+        .product-info {
+            padding: 12px;
+        }
+
+        .product-name {
+            font-size: 14px;
+            font-weight: 600;
+            color: #2f3542;
+            margin-bottom: 5px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .product-price {
+            font-size: 15px;
+            font-weight: 700;
+            color: #ff4757;
+            margin-bottom: 10px;
+        }
+
+        .add-to-cart-btn {
+            width: 100%;
+            padding: 8px;
+            background-color: #2ed573;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            font-weight: 600;
+            font-size: 13px;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+
+        .add-to-cart-btn:active {
+            background-color: #26af5f;
+            transform: scale(0.98);
+        }
+
+        /* Footer */
+        footer {
+            background: #2f3542;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            font-size: 12px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Top Navigation Bar -->
+    <nav>
+        <div class="logo">PakStore</div>
+        <div class="search-bar">
+            <input type="text" placeholder="Search products...">
+        </div>
+        <div class="cart-icon">
+            🛒
+            <span class="cart-count">3</span>
+        </div>
+    </nav>
+
+    <!-- Hero Banner -->
+    <div class="hero">
+        <h1>Mega Sale Live! 🔥</h1>
+        <p>Get up to 50% off on your favorite items.</p>
+    </div>
+
+    <!-- Products Section -->
+    <div class="section-title">Trending Products</div>
+
+    <div class="product-grid">
+        <!-- Product 1 -->
+        <div class="product-card">
+            <img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=300" class="product-img" alt="Headphones">
+            <div class="product-info">
+                <div class="product-name">Wireless Headphones</div>
+                <div class="product-price">Rs. 3,499</div>
+                <button class="add-to-cart-btn">Add to Cart</button>
+            </div>
+        </div>
+
+        <!-- Product 2 -->
+        <div class="product-card">
+            <img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=300" class="product-img" alt="Watch">
+            <div class="product-info">
+                <div class="product-name">Smart Watch Pro</div>
+                <div class="product-price">Rs. 5,999</div>
+                <button class="add-to-cart-btn">Add to Cart</button>
+            </div>
+        </div>
+
+        <!-- Product 3 -->
+        <div class="product-card">
+            <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=300" class="product-img" alt="Shoes">
+            <div class="product-info">
+                <div class="product-name">Running Sneakers</div>
+                <div class="product-price">Rs. 4,200</div>
+                <button class="add-to-cart-btn">Add to Cart</button>
+            </div>
+        </div>
+
+        <!-- Product 4 -->
+        <div class="product-card">
+            <img src="https://images.unsplash.com/photo-1526170375885-4d8ecf77b99f?w=300" class="product-img" alt="Camera">
+            <div class="product-info">
+                <div class="product-name">Mini DSLR Camera</div>
+                <div class="product-price">Rs. 18,500</div>
+                <button class="add-to-cart-btn">Add to Cart</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 PakStore. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>
